@@ -2,9 +2,7 @@ package main;
 
 import assemblers.Assembler;
 import assemblers.ChamplainAssembler;
-import assemblers.MaisonneuveAssembler;
 import scrapers.ChamplainScraper;
-import scrapers.MaisonneuveScraper;
 import scrapers.OmnivoxScraper;
 import students.Student;
 import students.StudentManager;
@@ -24,23 +22,14 @@ public class Main {
 		Assembler assembler = null;
 
 		String cegepName = args[0];
-		switch (cegepName.toLowerCase()) {
-		case "champlain":
-			scraper = new ChamplainScraper();
-			assembler = new ChamplainAssembler();
-			break;
 
-		case "maisonneuve":
-			scraper = new MaisonneuveScraper();
-			assembler = new MaisonneuveAssembler();
-			break;
-
-		default:
-			System.out.println("The currently supported CEGEPs are:");
-			System.out.println("\t- Champlain");
-			System.out.println("\t- Maisonneuve");
-			System.exit(0);
-		}
+        if (cegepName.equalsIgnoreCase("champlain")) {
+            scraper = new ChamplainScraper();
+            assembler = new ChamplainAssembler();
+        } else {
+            System.out.println("This program only supports Champlain College at the moment.");
+            System.exit(0);
+        }
 
 		Student student = new Student();
 		StudentManager manager = new StudentManager(scraper, assembler, student);

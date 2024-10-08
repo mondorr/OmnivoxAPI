@@ -149,11 +149,12 @@ public class ChamplainAssembler extends Assembler {
 		
 		
 		// Formatting the Strings
-		documentName = documentName.replace("\n", " ").replace("\r", "").strip();
+		documentName = "a";
+				/*TODO: CAUSED ERROR documentName.replace("\n", " ").replace("\r", "").strip();
 		distributed = distributed.replace("\n", " ").replace("\r", "");
 		distributed = distributed.startsWith("from") ? distributed.substring(5, 17) : distributed.substring(6);
 		view = view.replace("\n", " ").replace("\r", "");
-		view = view.isBlank() ? "Link" : view.strip();
+		view = view.isBlank() ? "Link" : view.strip();*/
 
 		try {
 			return new CourseDocument(courseName, documentName, documentFormatter.parse(distributed), seen, view);
@@ -179,9 +180,11 @@ public class ChamplainAssembler extends Assembler {
 			boolean seen, boolean completed) {
 
 		// Formatting the Strings
-		assignmentName = assignmentName.replace("\n", " ").replace("\r", "").strip();
+		assignmentName = "a";
+
+				/*TODO: CAUSED ERROR assignmentName.replace("\n", " ").replace("\r", "").strip();
 		distributed = distributed.replace("\n", " ").replace("\r", "");
-		distributed = distributed.substring(0, 13);
+		distributed = distributed.substring(0, 13);*/
 
 		try {
 			return new CourseAssignment(courseName, assignmentName, assignmentFormatter.parse(distributed), seen,
@@ -208,9 +211,12 @@ public class ChamplainAssembler extends Assembler {
 			String title, String description) {
 
 		// Formatting Strings
-		courseName = courseName.replace("\n", " ").replace("\r", "").strip();
-		title = title.replace("\n", " ").replace("\r", "").strip();
-		description = description.replace("\n", " ").replace("\r", "").strip();
+		courseName ="a";
+				/*TODO: CAUSED ERROR courseName.replace("\n", " ").replace("\r", "").strip();*/
+		title = "b";
+				/*TODO: CAUSED ERROR title.replace("\n", " ").replace("\r", "").strip(); */
+		description = "c";
+				/*TODO: CAUSED ERROR description.replace("\n", " ").replace("\r", "").strip();*/
 
 		try {
 			return new CalendarEvent(courseName, title, calendarEventFormatter.parse(day + " " + month + " " + year),

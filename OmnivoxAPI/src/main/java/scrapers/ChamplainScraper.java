@@ -15,7 +15,7 @@ public class ChamplainScraper extends OmnivoxScraper{
 	/**
 	 * The Omnivox login link for Champlain college.
 	 */
-	private static final String loginUrl = "https://champlaincollege-st-lambert.omnivox.ca/intr/Module/Identification/Login/Login.aspx";
+	private static final String loginUrl = "https://csfoy.omnivox.ca/intr/Module/Identification/Login/Login.aspx";
 	
 	/**
 	 * Default constructor for the Champlain Scraper.

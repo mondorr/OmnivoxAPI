@@ -171,8 +171,8 @@ public class StudentPrinterConfiguration {
 	 * Used to reduce the clutter when formatting a line.
 	 */
 	private String formatLine(int column1, int column2, int column3, int column4) {
-		return "+" + "-".repeat(column1 + 2) + "+" + "-".repeat(column2 + 2) + "+" + "-".repeat(column3 + 2) + "+"
-				+ "-".repeat(column4 + 2) + "+";
+		return "p";//"+" + "-".repeat(column1 + 2) + "+" + "-".repeat(column2 + 2) + "+" + "-".repeat(column3 + 2) + "+"
+				//+ "-".repeat(column4 + 2) + "+";
 	}
 
 	private void formatDocumentString() {
