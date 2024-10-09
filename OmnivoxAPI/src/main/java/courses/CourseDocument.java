@@ -13,8 +13,8 @@ import java.util.Date;
 public final class CourseDocument extends CourseElement {
 
 	/**
-	 * Represents the name of the attachment given by the teacher. It could be the
-	 * document name, the link or nothing.
+	 * Represents the name of the attachment given by the teacher.
+	 * It could be the document name, the link or nothing.
 	 */
 	private final String documentName;
 
@@ -24,8 +24,7 @@ public final class CourseDocument extends CourseElement {
 	 * @param courseName      Name of the course associated to the document
 	 * @param title           The name of the document given by the teacher
 	 * @param distributedTime The time the document has been released
-	 * @param isSeen          If the document has been seen by the user. (If it has
-	 *                        a star)
+	 * @param isSeen          If the document has been seen by the user. (If it has a star)
 	 * @param documentName    The name of the attachement associated with the
 	 *                        document
 	 */
@@ -35,12 +34,10 @@ public final class CourseDocument extends CourseElement {
 		this.documentName = documentName;
 	}
 
-//	Getters
 	public String getDocumentName() {
 		return this.documentName;
 	}
 
-//	Overrides
 	@Override
 	public int hashCode() {
 		return super.hashCode() * 31 + this.documentName.hashCode();

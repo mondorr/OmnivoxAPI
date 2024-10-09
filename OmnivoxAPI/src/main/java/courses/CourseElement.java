@@ -4,20 +4,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * This abstract class is used as a base class for the following objects:
+ * This abstract class is used as a base class for the following classes:
  * {@link CourseAssignment} {@link CourseDocument} {@link CalendarEvent}
  * 
- * It is used as a parent class for storing the title of the element, the Date
- * of the element and it's course name.
+ * It's used as a parent class for storing the title of the element, the Date of the element and its course name.
  * 
- * This class is Immutable. It also implements the Comparable interface to allow
- * sorting by date in the {@link Course} object's lists.
+ * This class is Immutable.
+ * It also implements the Comparable interface to allow sorting by date in the {@link Course} object's lists.
  */
 public abstract class CourseElement implements Comparable<CourseElement> {
 
 	/**
-	 * This formatter is used to convert the {@link Date} field into a readable
-	 * String.
+	 * This formatter is used to convert the {@link Date} field into a readable String.
 	 */
 	private static final SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
 
@@ -60,8 +58,7 @@ public abstract class CourseElement implements Comparable<CourseElement> {
 	 * Only constructor for the CourseElement.
 	 * 
 	 * @param courseName      Name of the course associated to the element
-	 * @param title           The title of the element. Ex: The name of the
-	 *                        assignment.
+	 * @param title           The title of the element. Ex: The name of the assignment.
 	 * @param distributedTime The time the element has been created or is due.
 	 * @param isSeen          If the document has been seen
 	 */
@@ -73,7 +70,6 @@ public abstract class CourseElement implements Comparable<CourseElement> {
 		this.seen = isSeen;
 	}
 
-//	Getters
 	public String getTitle() {
 		return title;
 	}

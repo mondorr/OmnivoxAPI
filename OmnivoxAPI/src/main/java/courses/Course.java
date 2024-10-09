@@ -16,20 +16,17 @@ public final class Course {
 	/**
 	 * Represents the name of the course.
 	 * 
-	 * Note: It will be used as a key for the courses of the {@link Student} having
-	 * that course.
+	 * Note: It will be used as a key for the courses of the {@link Student} having that course.
 	 */
 	private final String courseName;
 
 	/**
-	 * Used to hold all of the document the student has in this course. It is a list
-	 * since the number of documents are not defined and can vary.
+	 * Used to hold all the document the student has in this course.
 	 */
 	private final ArrayList<CourseDocument> courseDocuments = new ArrayList<CourseDocument>();
 
 	/**
-	 * Used to hold all of the assignments the student has in this course. It is a
-	 * list since the number of assignment are not defined and can vary.
+	 * Used to hold all the assignments the student has in this course.
 	 */
 	private final ArrayList<CourseAssignment> courseAssignments = new ArrayList<CourseAssignment>();
 
@@ -45,8 +42,7 @@ public final class Course {
 	/**
 	 * Used to add a document to the course.
 	 * 
-	 * Will throw a NullPointerException to prevent having null elements in the
-	 * list.
+	 * Will throw a NullPointerException to prevent having null elements in the list.
 	 * 
 	 * @param document The document to be passed
 	 */
@@ -61,8 +57,7 @@ public final class Course {
 	/**
 	 * Used to add an assignment to the course.
 	 * 
-	 * Will throw a NullPointerException to prevent having null elements in the
-	 * list.
+	 * Will throw a NullPointerException to prevent having null elements in the list.
 	 * 
 	 * @param assignment The assignment to be passed
 	 */
@@ -75,10 +70,8 @@ public final class Course {
 	}
 
 	/**
-	 * Sorts the list and returns all of the course documents by date.
-	 * 
-	 * Will return an empty array if the list is empty.
-	 * 
+	 * Sorts the list and returns all the course documents by date.
+	 *
 	 * @return Array of sorted documents by date
 	 */
 	public CourseDocument[] getDocuments() {
@@ -87,8 +80,7 @@ public final class Course {
 	}
 
 	/**
-	 * Sorts the list of documents by time and gets the first x documents by newest
-	 * date.
+	 * Sorts the list of documents by time and gets the first x documents by newest date.
 	 * 
 	 * Will return an empty array if x is 0 or the list is empty.
 	 * 
@@ -98,12 +90,11 @@ public final class Course {
 	 */
 	public CourseDocument[] getNewestDocuments(int x) {
 		Collections.sort(this.courseDocuments);
-		return getBottomDocuments(x); // Since newest documents have are the last in terms of time
+		return getBottomDocuments(x); // Since newest documents are the last in terms of time
 	}
 
 	/**
-	 * Sorts the list of documents by time and gets the first x documents by oldest
-	 * date.
+	 * Sorts the list of documents by time and gets the first x documents by oldest date.
 	 * 
 	 * Will return an empty array if x is 0 or the list is empty.
 	 * 
@@ -117,10 +108,9 @@ public final class Course {
 	}
 
 	/**
-	 * Sorts the list and returns all of the course assignments by date.
+	 * Sorts the list and returns all the course assignments by date.
 	 * 
-	 * @return An array of the corresponding assignments. Note: Will return an empty
-	 *         array if the list is empty.
+	 * @return An array of the corresponding assignments.
 	 */
 	public CourseAssignment[] getAssignments() {
 		Collections.sort(this.courseAssignments);
@@ -128,14 +118,12 @@ public final class Course {
 	}
 
 	/**
-	 * Sorts the list of assignments by time and gets the first x assignments by
-	 * newest date.
+	 * Sorts the list of assignments by time and gets the first x assignments by newest date.
 	 * 
 	 * @param x Number of assignments to get.
 	 * 
-	 * @return An array of the corresponding assignments. It will be ordered from
-	 *         oldest to newest. Note: Will return an empty array if x is 0 or the
-	 *         list is empty.
+	 * @return An array of the corresponding assignments. Ordered from oldest to newest.
+	 * Note: Will return an empty array if x is 0 or the list is empty.
 	 */
 	public CourseAssignment[] getNewestAssignments(int x) {
 		Collections.sort(this.courseAssignments);
@@ -143,13 +131,12 @@ public final class Course {
 	}
 
 	/**
-	 * Sorts the list of assignments by time and gets the first x assignments by
-	 * oldest date.
+	 * Sorts the list of assignments by time and gets the first x assignments by oldest date.
 	 * 
 	 * @param x Number of assignments to get.
 	 * 
-	 * @return An array of the corresponding assignments. Note: Will return an empty
-	 *         array if x is 0 or the list is empty.
+	 * @return An array of the corresponding assignments.
+	 * Note: Will return an empty array if x is 0 or the list is empty.
 	 */
 	public CourseAssignment[] getOldestAssignments(int x) {
 		Collections.sort(this.courseAssignments);
@@ -158,9 +145,7 @@ public final class Course {
 
 	/**
 	 * Used to get the first x documents of the list.
-	 * 
-	 * This method is called after the list is sorted so it can go in order without
-	 * any problems.
+	 * This method is called after the list is sorted.
 	 * 
 	 * @param x The number of documents to get
 	 * 
@@ -177,8 +162,7 @@ public final class Course {
 	/**
 	 * Used to get the last x documents of the list.
 	 * 
-	 * This method is called after the list is sorted so it can go in order without
-	 * any problems.
+	 * This method is called after the list is sorted
 	 * 
 	 * @param x The number of documents to get
 	 * 
@@ -197,8 +181,7 @@ public final class Course {
 	/**
 	 * Used to get the first x assignments of the list.
 	 * 
-	 * This method is called after the list is sorted so it can go in order without
-	 * any problems.
+	 * This method is called after the list is sorted
 	 * 
 	 * @param x The number of assignments to get
 	 * 
@@ -215,8 +198,7 @@ public final class Course {
 	/**
 	 * Used to get the last x assignments of the list.
 	 * 
-	 * This method is called after the list is sorted so it can go in order without
-	 * any problems.
+	 * This method is called after the list is sorted
 	 * 
 	 * @param x The number of assignments to get
 	 * 

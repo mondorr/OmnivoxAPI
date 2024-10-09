@@ -16,17 +16,14 @@ import assemblers.Assembler;
 
 /**
  * This abstract class is used to collect the {@link HtmlPage} object from
- * Omnivox. You need to extend this class and implement its 4 methods. The job
- * of this class is to collect the corresponding pages from Omnivox so that the
- * {@link Assembler} will turn them into usable object.
+ * Omnivox. You need to extend this class and implement its 4 methods.
+ * This class' goal is to collect the appropriate pages from Omnivox so that the {@link Assembler} can turn them into usable objects.
  */
 public abstract class OmnivoxScraper {
 
 	/**
 	 * This String represents the login url of the Omnivox page.
-	 * 
-	 * It should have the following form: https:// + [Your Cegep Name] +
-	 * .omnivox.ca/intr/Module/Identification/Login/Login.aspx
+	 *
 	 */
 	private final String loginUrl;
 
@@ -36,12 +33,12 @@ public abstract class OmnivoxScraper {
 	private final WebClient client = newClient();
 
 	/**
-	 * Represents the Html Version of the Omnivox homepage.
+	 * Represents the HtmlPage of Omnivox's homepage.
 	 */
 	protected HtmlPage homePage;
 
 	/**
-	 * Represents the Html Version of the Omnivox Lea page.
+	 * Represents the HtmlPage of Lea's homepage.
 	 */
 	protected HtmlPage LeaPage;
 
@@ -53,8 +50,7 @@ public abstract class OmnivoxScraper {
 	public OmnivoxScraper(String loginUrl) throws IllegalArgumentException {
 
 		// Check if it matches the login pattern
-		if (!loginUrl
-				.matches("https:\\/\\/(.+?)\\.omnivox\\.ca\\/intr\\/Module\\/Identification\\/Login\\/Login\\.aspx")) {
+		if (!loginUrl.matches("https:\\/\\/(.+?)\\.omnivox\\.ca\\/intr\\/Module\\/Identification\\/Login\\/Login\\.aspx")) {
 			throw new IllegalArgumentException("The login url is invalid it should match this pattern:"
 					+ "https:// + [Your Cegep Name] + .omnivox.ca/intr/Module/Identification/Login/Login.aspx");
 		}
@@ -63,36 +59,32 @@ public abstract class OmnivoxScraper {
 	}
 
 	/**
-	 * This method needs to get all of the documents in the student's account.
+	 * This method needs to get all the documents in the student's account.
 	 * 
-	 * When called, it should go and find all of the HtmlPages from every course
-	 * containing all of the document pages. It need to go through the Lea page and
-	 * return an {@link HtmlPage} for every course.
+	 * When called, it should go and find all the HtmlPages from every course containing all the document pages.
+	 * It needs to go through the Lea page and return a {@link HtmlPage} for every course.
 	 */
 	public abstract HtmlPage[] getDocumentPages();
 
 	/**
-	 * This method needs to get all of the assignments in the student's account.
+	 * This method needs to get all the assignments in the student's account.
 	 * 
-	 * When called, it should go and find all of the HtmlPages from every course
-	 * containing all of the assignment pages. It need to go through the Lea page
-	 * and return an {@link HtmlPage} for every course.
+	 * When called, it should go and find all the HtmlPages from every course
+	 * containing all the assignment pages.
+	 * It needs to go through the Lea page and return an {@link HtmlPage} for every course.
 	 */
 	public abstract HtmlPage[] getAssignmentPages();
 
 	/**
-	 * This method prints the what's new section in the omnivox homepage.
-	 * 
-	 * This method will not break the program if it is not well implemented since it
-	 * doesn't return anything.
+	 * This method prints the what's new section in the Ommnivox homepage.
 	 */
+
 	public abstract void printWhatsNew();
 
 	/**
 	 * This method needs to set the Lea Page field to the corresponding field.
 	 * 
-	 * However, if it is not set, it will not be usable since it will throw a
-	 * {@link NullPointerException}.
+	 * However, if it is not set, it will not be usable since it will throw a {@link NullPointerException}.
 	 */
 	public abstract void setLeaPage();
 
@@ -116,10 +108,7 @@ public abstract class OmnivoxScraper {
 	}
 
 	/**
-	 * This method will login to the Omnivox page and set the homePage field.
-	 * 
-	 * @implNote If you override this method because it can't login to your Omnivox,
-	 *           make sure you set the homePage field to it's correct value.
+	 * This method will log in to the Omnivox page and set the homePage field.
 	 */
 	public void login(String username, String password) {
 

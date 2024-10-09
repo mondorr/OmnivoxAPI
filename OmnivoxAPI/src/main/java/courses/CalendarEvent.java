@@ -5,11 +5,9 @@ import java.util.Date;
 /**
  * This class represents a course event on the calendar of the homepage.
  * 
- * It needs only 3 of the 4 parameters required by it's parent class since a
- * calendar event cannot be seen.
+ * It needs only 3 of the 4 parameters required by its parent class since a calendar event cannot be seen.
  * 
  * You also need to provide an extra parameter.
- * 
  * This class is Immutable and final.
  */
 public final class CalendarEvent extends CourseElement {

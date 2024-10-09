@@ -1,8 +1,8 @@
 package main;
 
 import assemblers.Assembler;
-import assemblers.ChamplainAssembler;
-import scrapers.ChamplainScraper;
+import assemblers.SaintFoyAssembler;
+import scrapers.SaintFoyScraper;
 import scrapers.OmnivoxScraper;
 import students.Student;
 import students.StudentManager;
@@ -12,24 +12,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		if (args.length != 3) {
-			System.out.println("Usage: java Main [CegepName] [StudentNumber] [Password]");
+		if (args.length != 2) {
+			System.out.println("Usage: java Main [StudentNumber] [Password]");
 			System.out.println("Or: java -cp OmnivoxAPI-0.0.1-SNAPSHOT.jar Main [CegepName] [StudentNumber] [Password]");
 			System.exit(0);
 		}
 
-		OmnivoxScraper scraper = null;
-		Assembler assembler = null;
-
-		String cegepName = args[0];
-
-        if (cegepName.equalsIgnoreCase("champlain")) {
-            scraper = new ChamplainScraper();
-            assembler = new ChamplainAssembler();
-        } else {
-            System.out.println("This program only supports Champlain College at the moment.");
-            System.exit(0);
-        }
+		OmnivoxScraper scraper = new SaintFoyScraper();
+		Assembler assembler = new SaintFoyAssembler();
 
 		Student student = new Student();
 		StudentManager manager = new StudentManager(scraper, assembler, student);
@@ -37,8 +27,8 @@ public class Main {
 
 		System.out.println("Logging in...");
 
-		String studentNumber = args[1];
-		String password = args[2];
+		String studentNumber = args[0];
+		String password = args[1];
 		
 		manager.login(studentNumber, password);
 		

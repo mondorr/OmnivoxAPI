@@ -5,8 +5,7 @@ import java.util.Date;
 /**
  * This class represents a course assignment on the Lea page.
  * 
- * It requires the same values as its parent class {@link CourseElement} but
- * needs an extra parameter.
+ * It requires the same values as its parent class {@link CourseElement} but needs an extra parameter.
  * 
  * This class is Immutable and final.
  */
@@ -33,7 +32,6 @@ public final class CourseAssignment extends CourseElement {
 		this.completed = isCompleted;
 	}
 
-	// Getters
 	public boolean isCompleted() {
 		return this.completed;
 	}

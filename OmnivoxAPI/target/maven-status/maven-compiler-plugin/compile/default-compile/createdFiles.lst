@@ -1,0 +1,14 @@
+scrapers\ChamplainScraper.class
+courses\Course.class
+assemblers\Assembler.class
+students\StudentPrinterConfiguration.class
+scrapers\OmnivoxScraper.class
+main\Main.class
+students\StudentManager.class
+courses\CourseDocument.class
+students\StudentPrinter.class
+assemblers\ChamplainAssembler.class
+courses\CourseElement.class
+students\Student.class
+courses\CourseAssignment.class
+courses\CalendarEvent.class
